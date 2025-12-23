@@ -99,5 +99,14 @@ if [[ -z "$ANSWER" ]]; then
 fi
 
 # Вывод ответа
-echo -e "\n${GREEN}Ответ Gemini:${NC}"
-echo "$ANSWER" | bat --language=markdown --theme="OneHalfDark" --paging=never
+echo ""
+echo -e "${GREEN}╔═══════════════════════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║     ${YELLOW} ██████╗ ███████╗███╗   ███╗██╗███╗   ██╗██╗${GREEN}        ║${NC}"
+echo -e "${GREEN}║     ${YELLOW}██╔════╝ ██╔════╝████╗ ████║██║████╗  ██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║     ${YELLOW}██║  ███╗█████╗  ██╔████╔██║██║██╔██╗ ██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║     ${YELLOW}██║   ██║██╔══╝  ██║╚██╔╝██║██║██║╚██╗██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║     ${YELLOW}╚██████╔╝███████╗██║ ╚═╝ ██║██║██║ ╚████║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║     ${YELLOW} ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝${GREEN}        ║${NC}"
+echo -e "${GREEN}╚═══════════════════════════════════════════════════════════╝${NC}"
+echo ""
+echo "$ANSWER" | bat --style=plain --language=markdown --theme="OneHalfDark"
