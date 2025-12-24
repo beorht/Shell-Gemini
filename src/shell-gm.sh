@@ -48,7 +48,7 @@ if [[ ! -f .env ]]; then
     error "Файл .env не найден. Создайте его по образцу .env.example"
 fi
 
-source .env
+source ~/.config/shell-gemini/.shell-gemini
 
 if [[ -z "$GEMINI_API" ]]; then
     error "GEMINI_API не установлен в .env файле"
@@ -101,12 +101,12 @@ fi
 # Вывод ответа
 echo ""
 echo -e "${GREEN}╔═══════════════════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║     ${YELLOW} ██████╗ ███████╗███╗   ███╗██╗███╗   ██╗██╗${GREEN}        ║${NC}"
-echo -e "${GREEN}║     ${YELLOW}██╔════╝ ██╔════╝████╗ ████║██║████╗  ██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║     ${YELLOW}██║  ███╗█████╗  ██╔████╔██║██║██╔██╗ ██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║     ${YELLOW}██║   ██║██╔══╝  ██║╚██╔╝██║██║██║╚██╗██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║     ${YELLOW}╚██████╔╝███████╗██║ ╚═╝ ██║██║██║ ╚████║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║     ${YELLOW} ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW} ██████╗ ███████╗███╗   ███╗██╗███╗   ██╗██╗${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW}██╔════╝ ██╔════╝████╗ ████║██║████╗  ██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW}██║  ███╗█████╗  ██╔████╔██║██║██╔██╗ ██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW}██║   ██║██╔══╝  ██║╚██╔╝██║██║██║╚██╗██║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW}╚██████╔╝███████╗██║ ╚═╝ ██║██║██║ ╚████║██║${GREEN}        ║${NC}"
+echo -e "${GREEN}║       ${YELLOW} ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝${GREEN}        ║${NC}"
 echo -e "${GREEN}╚═══════════════════════════════════════════════════════════╝${NC}"
 echo ""
 echo "$ANSWER" | bat --style=plain --language=markdown --theme="OneHalfDark"
