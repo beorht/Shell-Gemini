@@ -45,7 +45,7 @@ PROMPT=$1
 
 # Загрузка .env файла
 if [[ ! -f ~/.config/shell-gemini/.shell-gemini ]]; then
-    error "Файл  ~/.config/shell-gemini/.shell-gemin не найден. Создайте его по образцу .env.example"
+    error "Файл  ~/.config/shell-gemini/.shell-gemini не найден. Создайте его по образцу .env.example"
 fi
 
 source ~/.config/shell-gemini/.shell-gemini
