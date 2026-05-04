@@ -110,14 +110,7 @@ GEMINI_API=ваш_api_ключ_здесь
 chmod 600 ~/.config/shell-gemini/.shell-gemini
 ```
 
-**Шаг 4: Создать .env (для обратной совместимости)**
-
-```bash
-cp .env.example .env
-nano .env  # Добавьте GEMINI_API=ваш_ключ
-```
-
-**Шаг 5: Сделать исполняемым и добавить в PATH**
+**Шаг 4: Сделать исполняемым и добавить в PATH**
 
 ```bash
 chmod +x src/shell-gm.sh
@@ -358,9 +351,11 @@ shellgemini/
 ├── install.ps1          # Установщик Windows
 ├── uninstall.sh         # Деинсталлятор Linux/macOS
 ├── uninstall.ps1        # Деинсталлятор Windows
-├── .env                 # Конфигурация (API ключ) - НЕ КОММИТИТЬ!
-├── .env.example         # Шаблон для .env
-├── .gitignore           # Игнорируемые файлы (включая .env)
+├── .env.example         # Шаблон конфигурации
+├── .gitignore           # Игнорируемые файлы
+├── README.md            # Документация (этот файл)
+├── TODO.md              # Планируемые улучшения
+└── CLAUDE.md            # Инструкции для Claude Code AI
 ├── README.md            # Документация (этот файл)
 ├── TODO.md              # Планируемые улучшения
 └── CLAUDE.md            # Инструкции для Claude Code AI
@@ -464,7 +459,7 @@ brew install curl jq bat
 </details>
 
 <details>
-<summary><b>Ошибка: "Файл .env не найден"</b></summary>
+<summary><b>Ошибка: "Файл конфигурации не найден"</b></summary>
 
 **Решение (если установлено через install.sh):**
 ```bash
@@ -473,8 +468,9 @@ nano ~/.config/shell-gemini/.shell-gemini  # Проверьте API ключ з�
 
 **Решение (если ручная установка):**
 ```bash
-cp .env.example .env
-nano .env  # добавьте ваш API ключ
+cp .env.example ~/.config/shell-gemini/.shell-gemini
+nano ~/.config/shell-gemini/.shell-gemini  # добавьте ваш API ключ
+chmod 600 ~/.config/shell-gemini/.shell-gemini
 ```
 
 </details>
@@ -534,8 +530,8 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 **Для всех платформ:**
 
 1. **Никогда не коммитьте конфиг с ключом в git**
-   - Файл `.gitignore` уже настроен для `.env`
-   - Конфиг находится вне репозитория
+    - Конфиг `.shell-gemini` находится вне репозитория
+    - Файл `.env.example` в `.gitignore` как мера предосторожности
 
 2. **Проверьте права доступа к конфигу:**
 

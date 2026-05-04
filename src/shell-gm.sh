@@ -27,21 +27,25 @@ show_help() {
   Требования:
       - curl (для API запросов)
       - jq (для парсинга JSON)
-      - .env файл с GEMINI_API ключом
+      - Конфиг ~/.config/shell-gemini/.shell-gemini с GEMINI_API ключом
 EOF
     exit 0
 }
 
+# Проверка аргументов на наличие help
+for arg in "$@"; do
+    if [[ "$arg" == "-h" || "$arg" == "--help" ]]; then
+        show_help
+    fi
+done
+
 # Проверка аргументов
-if [[ $# -eq 0  ]]; then
+if [[ $# -eq 0 ]]; then
     error "Не указан запрос. Используйте -h для справки"
 fi
 
-if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    show_help
-fi
-
-PROMPT=$1
+# Собрать запрос из всех аргументов (без кавычек)
+PROMPT=$(IFS=' '; echo "$*")
 
 # Загрузка .env файла
 if [[ ! -f ~/.config/shell-gemini/.shell-gemini ]]; then
@@ -51,7 +55,7 @@ fi
 source ~/.config/shell-gemini/.shell-gemini
 
 if [[ -z "$GEMINI_API" ]]; then
-    error "GEMINI_API не установлен в .env файле"
+    error "GEMINI_API не установлен в ~/.config/shell-gemini/.shell-gemini"
 fi
 
 # Проверка необходимых зависимостей
