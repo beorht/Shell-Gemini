@@ -100,13 +100,9 @@ fi
 
 # Вывод ответа
 echo ""
-echo -e "${GREEN}╔═══════════════════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║       ${YELLOW} ██████╗ ███████╗███╗   ███╗██╗███╗   ██╗██╗${GREEN}        ║${NC}"
-echo -e "${GREEN}║       ${YELLOW}██╔════╝ ██╔════╝████╗ ████║██║████╗  ██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║       ${YELLOW}██║  ███╗█████╗  ██╔████╔██║██║██╔██╗ ██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║       ${YELLOW}██║   ██║██╔══╝  ██║╚██╔╝██║██║██║╚██╗██║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║       ${YELLOW}╚██████╔╝███████╗██║ ╚═╝ ██║██║██║ ╚████║██║${GREEN}        ║${NC}"
-echo -e "${GREEN}║       ${YELLOW} ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝${GREEN}        ║${NC}"
-echo -e "${GREEN}╚═══════════════════════════════════════════════════════════╝${NC}"
+echo -e "${GREEN}╔════════════════════════════════╗${NC}"
+echo -e "${GREEN}║    ▶ ${YELLOW}✦ GEMINI AI Mini CLI ✦${GREEN}    ║${NC}"
+echo -e "${GREEN}╚════════════════════════════════╝${NC}"
 echo ""
-echo "$ANSWER" | bat --style=plain --language=markdown --theme="OneHalfDark"
+
+echo "$ANSWER" | bat --style=plain -P -p --language=markdown --theme="OneHalfDark"
